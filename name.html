@@ -21,7 +21,33 @@
 			var name = document.getElementById('name').value;
   			var words = name.split(' ');
   			var wordCount = words.length;
-  			
+  			var canContain = " abcdefghijklmnopqrstuvwxyz.ABCDEFGHIJKLMNOPQRSTUVWXYZ-";      // range of characters for input
+  			var nameL = name.length;
+  			var temp = "";
+  			var valid = false;
+
+
+  			for(var i=0 ; i<nameL ; i++ ){                                                  // one by one input characters checking
+  				temp = name.charAt(i);
+  				var matchCheck = 0;
+
+  				for(var j=0 ; j<canContain.length ; j++){
+  					
+  					if(temp == canContain.charAt(j)){
+  						matchCheck = 1;
+  					}
+  				}
+
+  				if(matchCheck == 1){
+  					valid = true;
+  				}else if(matchCheck == 0){
+  					valid = false;
+  					break;
+  				}else{
+  					window.alert("ERROR");
+  				}
+  			}
+
 
 			if(name == "" || name == null){
 				window.alert("null submission");
@@ -29,8 +55,10 @@
 			}else if(wordCount<2){
 				window.alert("Name should be at least of 2 words.");
 				document.getElementById('msg').innerHTML = "Name should be at least of 2 words.";
-			}
-			else{
+			}else if(!valid){
+				window.alert("Type valid characters!");
+				document.getElementById('msg').innerHTML = "Type valid characters!";
+			}else{
 				window.alert("Seems Ok")
 				document.getElementById('msg').innerHTML = "Seems Ok";
 			}
