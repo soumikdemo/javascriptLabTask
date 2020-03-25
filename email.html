@@ -5,34 +5,43 @@
 </head>
 <body>
 	<form>
-		Name</br>
-		<input id="email" type="email" name="email" value="" onblur="fieldCheck()" required></br>
 
-		<input type="button" name="btn" value="Submit" onclick="nameSubmit()">
+		Email</br>
+		<input id="email" type="email" name="email" value="" ></br>
+		<input type="button" name="btn" value="Submit" onclick="emailSubmit()"></br>
+
+		<p id="msg"></p>
 	</form>
 
 	<script>
 
-		function nameSubmit(){
+		function emailSubmit(){
 			"use strict";
 
-/*			var name = document.getElementById('name').value;
-			//var $targ = $(this);
-  			var words = name.html().split(' ');
-  			var wordCount = words.length;
+			var email = document.getElementById('email').value;
+			var atPosition = email.indexOf('@'); 
+			var valid = false;
 
-  			document.write(wordCount);
+			if(atPosition>-1){                             // if @ exists continues
+				if(email.includes('.',atPosition+3)){      // after @ checks '.' and domain name length (min 2)
+					valid = true;
+				}
+			}
+			
 
-			if(name == ""){
+			if(email == "" || email == null){
 				alert("null submission");
-			}else if(wordCount.length<2){
-				alert("Name should be at least of 2 words.");
+				document.getElementById('msg').innerHTML = "null submission";
+			}else if(!valid){
+				alert("Type a valid email address.");
+				document.getElementById('msg').innerHTML = "Type a valid email address.";
 			}
 			else{
-				document.getElementById('msg').innerHTML = "Ok";
+				document.getElementById('msg').innerHTML = "Seems Ok";
 			}
 
-			document.getElementById('msg').innerHTML = name;*/
+			
+
 		}
 	</script>
 </body>

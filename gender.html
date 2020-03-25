@@ -6,16 +6,15 @@
 <body>
 	<form>
 		<fieldset>
-		<legend>Gender</legend>
+			<legend>Gender</legend>
 
-		<input id="gender" type="radio" name="gender" value="male" >Male 
+			<input id="male" type="radio" name="gender" value="male" >Male 
+			<input id="female" type="radio" name="gender" value="female" >Female 
+			<input id="other" type="radio" name="gender" value="other" >Other 
 
-		<input id="gender" type="radio" name="gender" value="female" >Female 
-
-		<input id="gender" type="radio" name="gender" value="other" >Other 
-
-		</br>
+			</br>
 		</fieldset>
+
 		<input type="button" name="btn" value="Submit" onclick="genderSubmit()"></br>
 		<p id="msg"></p>
 	</form>
@@ -24,10 +23,33 @@
 
 		function genderSubmit(){
 			"use strict";
-			var gender = document.getElementById('gender');
 
-			document.getElementById('msg').innerHTML = gender.value;
+			var gender = "null"
+
+			if(document.getElementById('male').checked){
+
+				gender = document.getElementById('male').value;
+				window.alert("Seems Ok");
+				document.getElementById('msg').innerHTML = gender;
+
+			}else if(document.getElementById('female').checked){
+
+				gender = document.getElementById('female').value;
+				window.alert("Seems Ok");
+				document.getElementById('msg').innerHTML = gender;
+
+			}else if(document.getElementById('other').checked){
+
+				gender = document.getElementById('other').value;
+				window.alert("Seems Ok");
+				document.getElementById('msg').innerHTML = gender;
+
+			}else{
+				window.alert("Please select one from gender option.");
+				document.getElementById('msg').innerHTML = gender;
+			}	
 		}
+
 	</script>
 </body>
 </html>

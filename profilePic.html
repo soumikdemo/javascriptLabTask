@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profile Pic</title>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>Profile Pic</legend>
+
+			UserId  
+			<input id="userid" type="number" name="userid" value="" ></br>
+			Picture
+			<input id="upfile" type="file" name="upfile"></br><hr> 
+			
+		</fieldset>
+
+		<input type="button" name="btn" value="Submit" onclick="proPicSubmit()"></br>
+		<p id="msg"></p>
+	</form>
+
+	<script>
+
+		function proPicSubmit(){
+			"use strict";
+
+			var userid = document.getElementById("userid").value;
+
+			if(userid == "" || userid == null){
+
+				window.alert("null/blank field");
+				document.getElementById('msg').innerHTML = "null/blank field";
+
+			}else if(userid<0){
+
+				window.alert("UserId must be positive.");
+				document.getElementById('msg').innerHTML = "UserId must be positive.";
+
+			}else if(document.getElementById('upfile').value == ""){
+
+				window.alert("Please select a file.");
+				document.getElementById('msg').innerHTML = "Please select a file.";
+
+			}else{
+				window.alert("Seems Ok");
+				document.getElementById('msg').innerHTML = "Seems Ok";
+			}	
+		}
+
+	</script>
+</body>
+</html>

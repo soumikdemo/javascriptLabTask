@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Date of Birth</title>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>Date of Birth</legend>
+
+			<div> &nbsp; dd  &nbsp;&nbsp;&nbsp;  mm  &nbsp;&nbsp;&nbsp;  yyyy</div>
+			<input id="dd" type="number" size="1" name="dd" value="" style="width: 3em">/ 
+			<input id="mm" type="number" size="1" name="mm" value="" style="width: 3em">/
+			<input id="yyyy" type="number" size="3" name="yyyy" value="" style="width: 4em"> 
+
+			</br>
+		</fieldset>
+
+		<input type="button" name="btn" value="Submit" onclick="dobSubmit()"></br>
+		<p id="msg"></p>
+	</form>
+
+	<script>
+
+		function dobSubmit(){
+			"use strict";
+
+			var valid = false;
+			var day = document.getElementById("dd").value;
+			var month = document.getElementById("mm").value;
+			var year = document.getElementById("yyyy").value;
+
+			if((day>=1 && day<=31) && (month>=1 && month<=12) && (year>=1900 && year<=2016)){
+				valid = true;
+			}
+
+
+			if(day = "" || month == "" || year == ""){
+				window.alert("Null/Blank Submission.");
+				document.getElementById('msg').innerHTML = "Null/Blank Submission.";
+			}else if(!valid){
+				window.alert("Date not valid");
+				document.getElementById('msg').innerHTML = "Date not valid";
+			}else{
+				window.alert("Seems Ok");
+				document.getElementById('msg').innerHTML = "Seems Ok";
+			}
+		}
+
+	</script>
+</body>
+</html>

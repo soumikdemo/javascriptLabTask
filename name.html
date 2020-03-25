@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
 	<title>Name</title>
@@ -6,38 +6,35 @@
 <body>
 	<form>
 		Name</br>
-		<input id="name" type="text" name="name" value="" onblur="nameSubmit()" required></br>
-
+		<input id="name" type="text" name="name" value="" ></br>
 		<input type="button" name="btn" value="Submit" onclick="nameSubmit()"></br>
 
 		<p id="msg"></p>
-		<p id="wordCount"></p>
+		<p id="word"></p>
 	</form>
 
 	<script>
 
 		function nameSubmit(){
-			"use strict";
+			"use strict"
 
 			var name = document.getElementById('name').value;
-			//var $targ = $(this);
-  			var words = name.html().split(' ');
+  			var words = name.split(' ');
   			var wordCount = words.length;
+  			
 
-  			document.write(wordCount);
-
-			if(name == ""){
-				alert("null submission");
+			if(name == "" || name == null){
+				window.alert("null submission");
 				document.getElementById('msg').innerHTML = "Null submission";
-			}else if(wordCount.length<2){
-				alert("Name should be at least of 2 words.");
+			}else if(wordCount<2){
+				window.alert("Name should be at least of 2 words.");
 				document.getElementById('msg').innerHTML = "Name should be at least of 2 words.";
 			}
 			else{
-				document.getElementById('msg').innerHTML = "Ok";
+				window.alert("Seems Ok")
+				document.getElementById('msg').innerHTML = "Seems Ok";
 			}
 
-			//ocument.getElementById('msg').innerHTML = name;
 		}
 	</script>
 </body>

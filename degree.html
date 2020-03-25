@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Degree</title>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>Degree</legend>
+
+			  <input id="SSC" type="checkbox"  name="Degree1" value="SSC"> SSC 
+			  <input id="HSC" type="checkbox"  name="Degree2" value="HSC"> HSC 
+			  <input id="BSc" type="checkbox"  name="Degree3" value="BSc"> BSc
+
+			</br>
+		</fieldset>
+
+		<input type="button" name="btn" value="Submit" onclick="degreeSubmit()"></br>
+		<p id="msg"></p>
+	</form>
+
+	<script>
+
+		function degreeSubmit(){
+			"use strict";
+
+			var degree = "null"
+
+			if(document.getElementById('SSC').checked){
+
+				degree = document.getElementById('SSC').value;
+				window.alert("Seems Ok");
+				document.getElementById('msg').innerHTML = degree;
+
+			}else if(document.getElementById('HSC').checked){
+
+				degree = document.getElementById('HSC').value;
+				window.alert("Seems Ok");
+				document.getElementById('msg').innerHTML = degree;
+
+			}else if(document.getElementById('BSc').checked){
+
+				degree = document.getElementById('BSc').value;
+				window.alert("Seems Ok");
+				document.getElementById('msg').innerHTML = degree;
+
+			}else{
+				window.alert("Please select one from Degree option.");
+				document.getElementById('msg').innerHTML = degree;
+			}	
+		}
+
+	</script>
+</body>
+</html>
