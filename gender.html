@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gender</title>
+</head>
+<body>
+	<form>
+		<fieldset>
+		<legend>Gender</legend>
+
+		<input id="gender" type="radio" name="gender" value="male" >Male 
+
+		<input id="gender" type="radio" name="gender" value="female" >Female 
+
+		<input id="gender" type="radio" name="gender" value="other" >Other 
+
+		</br>
+		</fieldset>
+		<input type="button" name="btn" value="Submit" onclick="genderSubmit()"></br>
+		<p id="msg"></p>
+	</form>
+
+	<script>
+
+		function genderSubmit(){
+			"use strict";
+			var gender = document.getElementById('gender');
+
+			document.getElementById('msg').innerHTML = gender.value;
+		}
+	</script>
+</body>
+</html>
